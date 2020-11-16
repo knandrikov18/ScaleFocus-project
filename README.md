@@ -1,5 +1,6 @@
 Здравейте!
 Hi!
+<img src="zafe_logo.png" alt="Flowers in Chania">
 
 <br>
 <a href =>Документация (Documentation)</a>
