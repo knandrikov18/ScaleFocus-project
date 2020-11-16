@@ -6,7 +6,7 @@ Hi!
 <br>
 <a href => Блок-схема (Flowchart) </a>
 <br>
-<a href = > Презентация (Presentation) </a>\
+<a href = > Презентация (Presentation) </a>
 </center>
 
 
