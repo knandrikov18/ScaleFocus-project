@@ -1,12 +1,11 @@
-Здравейте!
-Hi!
-<img src="https://github.com/knandrikov18/ScaleFocus-project/blob/main/ZaFe/red.png?raw=true" width="300" height="300">
-
+<center><img src="https://github.com/knandrikov18/ScaleFocus-project/blob/main/ZaFe/red.png?raw=true" width="150" height="150"></center>
+<center>Здравейте!</center>
+<center>Hi!</center>
 <br>
-<a href =>Документация (Documentation)</a>
+<center><a href =>Документация (Documentation)</a></center>
 <br>
-<a href => Блок-схема (Flowchart) </a>
+<center><a href => Блок-схема (Flowchart) </a></center>
 <br>
-<a href = > Презентация (Presentation) </a>
+<center><a href = > Презентация (Presentation) </a></center>
 
 
