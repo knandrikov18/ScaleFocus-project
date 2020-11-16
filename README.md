@@ -1,6 +1,6 @@
 Здравейте!
 Hi!
-<img src="red.png" alt="Flowers in Chania">
+<img src="https://github.com/knandrikov18/ScaleFocus-project/blob/main/ZaFe/red.png?raw=true" alt="">
 
 <br>
 <a href =>Документация (Documentation)</a>
