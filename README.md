@@ -1,7 +1,7 @@
 <p align="center">
 <img src="https://github.com/knandrikov18/ScaleFocus-project/blob/main/ZaFe/Logo.png" width="350" height="350">  
   
-# Здравейте! Hi!
+#                                            Game project
 </p>
 <br>
 
