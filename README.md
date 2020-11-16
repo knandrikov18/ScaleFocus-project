@@ -1,6 +1,6 @@
 Здравейте!
 Hi!
-<img src="https://github.com/knandrikov18/ScaleFocus-project/blob/main/ZaFe/red.png?raw=true" width="500" height="600">
+<img src="https://github.com/knandrikov18/ScaleFocus-project/blob/main/ZaFe/red.png?raw=true" width="300" height="300">
 
 <br>
 <a href =>Документация (Documentation)</a>
