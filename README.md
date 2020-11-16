@@ -1,7 +1,5 @@
 <center>
-![GitHub Logo](/ZaFe/red.png)
-Format: ![ZaFe](url)
-<img src="https://github.com/knandrikov18/ScaleFocus-project/blob/main/ZaFe/red.png?raw=true" width="150" height="150">
+<img src="https://github.com/knandrikov18/ScaleFocus-project/blob/main/ZaFe/red.png?raw=true" width="350" height="350">
 Здравейте!
 Hi!
 <br>
