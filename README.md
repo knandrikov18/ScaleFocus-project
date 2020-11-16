@@ -5,13 +5,15 @@
 </p>
 <br>
 
+This is our project for ScaleFocus. This is a game which we created with C++ in Visual Studio 2019!
+
 ## Our Team
 
 - Kaloyan Andrikov (Scrum Trainer)
 - Plamen Kostov (Developer C++)
 - Ilian Yanev (Developer FrontEnd)
 - Jelqzko Ivanov (Quality Engeneer)
-- Petur Dyakov (Documentary)
+- Petar Dyakov (Documentary)
 
 ## Documentation, Presentation and Flowchart
 <br>
