@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/knandrikov18/ScaleFocus-project/blob/main/ZaFe/red.png?raw=true" width="350" height="350">
+<img src="https://github.com/knandrikov18/ScaleFocus-project/blob/main/ZaFe/Logo.png" width="350" height="350">
 Здравейте!
 Hi!
 </p>
