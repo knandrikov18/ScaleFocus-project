@@ -63,3 +63,41 @@ int getUserInput(int guess[])
 
 	return *guess;
 }
+
+int guessedNumbersAndPositions(int* secret_num, int* guess_num, bool secret_digit_used[], bool guess_digit_used[])
+{
+	int count = 0;
+
+	for (int i = 0; i < 4; i++)
+	{
+		if (secret_num[i] == guess_num[i])
+		{
+			count++;
+			secret_digit_used[i] = true;
+			guess_digit_used[i] = true;
+		}
+	}
+	return count;
+}
+
+int guessedNumbers(int* secret_num, int* guess_num, bool secret_digit_used[], bool guess_digit_used[])
+{
+	int count = 0;
+
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			if (secret_digit_used[i] || guess_digit_used[j])
+				continue;
+
+			if (secret_num[i] == guess_num[j])
+			{
+				count++;
+				secret_digit_used[i] = true;
+				guess_digit_used[j] = true;
+			}
+		}
+	}
+	return count;
+}
