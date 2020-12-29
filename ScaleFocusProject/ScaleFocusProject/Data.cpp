@@ -101,3 +101,38 @@ int guessedNumbers(int* secret_num, int* guess_num, bool secret_digit_used[], bo
 	}
 	return count;
 }
+
+int repetitiveNumbers(int arr[])
+{
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = i + 1; j <= 4; j++)
+		{
+			if (arr[i] == arr[j])
+			{
+				cout << "\n                                  Try without repetitive numbers: ";
+				for (int i = 0; i < 4; i++)
+				{
+					cin >> arr[i];
+				}
+			}
+		}
+	}
+	return *arr;
+}
+
+int inRange(int arr[])
+{
+	for (int i = 0; i < 4; i++)
+	{
+		while (arr[i] < 0 || arr[i] > 7)
+		{
+			cout << "\n                                      Not in range, try again: ";
+			for (int i = 0; i < 4; i++)
+			{
+				cin >> arr[i];
+			}
+		}
+	}
+	return *arr;
+}
