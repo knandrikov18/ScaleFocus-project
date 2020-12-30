@@ -5,7 +5,14 @@
 </p>
 <br>
 
+<p align="center"> 
+<a href="https://www.codefactor.io/repository/github/pkkostov18/scalefocus-project/overview/main"><img src="https://www.codefactor.io/repository/github/pkkostov18/scalefocus-project/badge/main?s=345bbbba90624eb7b5bf556041484587843f78df" alt="CodeFactor" /></a>
+</p>
+
+<br>
+<p align="center">
 This is our project for ScaleFocus. This is a game which we created with C++ in Visual Studio 2019!
+</p>
 
 ## Our Team
 
