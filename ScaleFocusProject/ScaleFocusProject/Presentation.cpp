@@ -5,6 +5,190 @@
 
 using namespace std;
 
+void difficultyForPlayer()
+{
+	int choice;
+
+	system("cls");
+
+	cout << endl;
+	cout << "                                      +--------------------------+" << endl;
+	cout << "                                      |        Difficulty:       |" << endl;
+	cout << "                                      +--------------------------+" << endl << endl;
+	cout << "                                             1. Normal" << endl;
+	cout << "                                             2. Hard  " << endl;
+	cout << "                                             3. Back  " << endl << endl;
+
+	cout << "                                            Choose: "; 
+	while (!(cin >> choice))
+	{
+		cout << "\n                                  Not an integer, please try again: "; cin >> choice;
+		cin.clear();
+		cin.ignore(123, '\n');
+	}
+
+	while (choice != 1 && choice != 2 && choice != 3)
+	{
+		cout << "                          Invalid input, please try again: "; cin >> choice;
+	}
+
+	switch (choice)
+	{
+	case 1: battleVsPlayerNormal();
+		break;
+	case 2: battleVsPlayerHard();
+		break;
+	case 3: askingUser();
+		break;
+	}
+}
+
+void difficultyForComputer()
+{
+	int choice;
+
+	system("cls");
+
+	cout << endl;
+	cout << "                                      +--------------------------+" << endl;
+	cout << "                                      |        Difficulty:       |" << endl;
+	cout << "                                      +--------------------------+" << endl << endl;
+	cout << "                                             1. Normal" << endl;
+	cout << "                                             2. Hard  " << endl;
+	cout << "                                             3. Back  " << endl << endl;
+
+	cout << "                                            Choose: "; 
+	while (!(cin >> choice))
+	{
+		cout << "\n                                  Not an integer, please try again: "; cin >> choice;
+		cin.clear();
+		cin.ignore(123, '\n');
+	}
+
+	while (choice != 1 && choice != 2 && choice != 3)
+	{
+		cout << "                          Invalid input, please try again: "; cin >> choice;
+	}
+
+	switch (choice)
+	{
+	case 1: battleVsComputerNormal();
+		break;
+	case 2: battleVsComputerHard();
+		break;
+	case 3: askingUser();
+		break;
+	}
+}
+
+void rules()
+{
+	int choice;
+
+	system("cls");
+
+	cout << endl;
+	cout << "                                       +--------------------+" << endl;
+	cout << "                                       |        Rules       |" << endl;
+	cout << "                                       +--------------------+" << endl << endl;
+	cout << "         +----------------------------+                      +----------------------------+" << endl;
+	cout << "         |         Normal mode        |                      |          Hard mode         |" << endl;
+	cout << "         +----------------------------+                      +----------------------------+" << endl;
+	cout << "         |1. First enter 4 numbers    |                      |1. First enter 4 numbers    |" << endl;
+	cout << "         |     for coordinates:       |                      |      for coordinates       |" << endl;
+	cout << "         | WITHOUT REPETITVE NUMBERS! |                      |   WITH REPETITVE NUMBERS!  |" << endl;
+	cout << "         |                            |                      |                            |" << endl;
+	cout << "         |2. Points for guessing      |                      |2. Points for guessing      |" << endl;
+	cout << "         |   - only the number: "; points1(); cout << "    |                      |   - only the number: "; points1(); cout << "    |" << endl;
+	cout << "         |   - the number and the     |                      |   - the number and the     |" << endl;
+	cout << "         |     position: "; points2(); cout << "           |                      |     position: "; points2(); cout << "           |" << endl;
+	cout << "         |                            |                      |                            |" << endl;
+	cout << "         |3. You have only 13 tries   |                      |3. You have only 13 tries   |" << endl;
+	cout << "         |   to guess the positions   |                      |   to guess the positions   |" << endl;
+	cout << "         |   of the 4 numbers or you  |                      |   of the 4 numbers or you  |" << endl;
+	cout << "         |           LOSE             |                      |           LOSE             |" << endl;
+	cout << "         |                            |                      |                            |" << endl;
+	cout << "         |4. To win you should to     |                      |4. To win you should to     |" << endl;
+	cout << "         |   collect 4 of these: "; points2(); cout << "   |                      |   collect 4 of these: "; points2(); cout << "   |" << endl;
+	cout << "         |                            |                      |                            |" << endl;
+	cout << "         |5. If you choose to play    |                      |5. If you choose to play    |" << endl;
+	cout << "         |   against the computer,    |                      |   against the computer,    |" << endl;
+	cout << "         |   the computer generate    |                      |   the computer generate    |" << endl;
+	cout << "         |       the numbers!         |                      |       the numbers!         |" << endl;
+	cout << "         +----------------------------+                      +----------------------------+" << endl << endl;
+	cout << "                                           Type 1 to back: "; 
+	
+	while (!(cin >> choice))
+	{
+		cout << "\n                                  Not an integer, please try again: "; cin >> choice;
+		cin.clear();
+		cin.ignore(123, '\n');
+	}
+
+	while (choice != 1)
+	{
+		cout << "                          Invalid input, please try again: "; cin >> choice;
+	}
+
+	switch (choice)
+	{
+	case 1: askingUser();
+		break;
+	}
+}
+
+void askingUser()
+{
+	int number;
+
+	system("cls");
+
+	cout << endl;
+	cout << "                                     +------------------------------------+" << endl;
+	cout << "                                     |              Welcome               |" << endl;
+	cout << "                                     |                                    |" << endl;
+	cout << "                                     |                                    |" << endl;
+	cout << "                                     |         Choose an option:          |" << endl;
+	cout << "                                     +------------------------------------+\n" << endl;
+
+	cout << "                               +----------------------+        +------------------+" << endl;
+	cout << "                               |   1. VS 2-nd player  |        |  2. VS computer  |" << endl;
+	cout << "                               +----------------------+        +------------------+\n" << endl;
+	cout << "                               +------------+                  +-----------+" << endl;
+	cout << "                               |  3. Rules  |                  |  4. Back  |" << endl;;
+	cout << "                               +------------+                  +-----------+" << endl;
+	cout << "                                               Choose an option: "; 
+
+	while (!(cin >> number))
+	{
+		cout << "\n                                  Not an integer, please try again: "; cin >> number;
+		cin.clear();
+		cin.ignore(123, '\n');
+	}
+
+	while (number != 1 && number != 2 && number != 3 && number != 4)
+	{
+		cout << "\n                                 Invalid input, please try again: "; cin >> number;
+	}
+
+	switch (number)
+	{
+	case 1:
+		difficultyForPlayer();
+		break;
+	case 2:
+		difficultyForComputer();
+		break;
+	case 3:
+		rules();
+		break;
+	case 4:
+		MainMenu();
+		break;
+	}
+	
+}
+
 void MainMenu()
 {
 	int choice{};

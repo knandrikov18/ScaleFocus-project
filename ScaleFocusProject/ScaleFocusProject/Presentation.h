@@ -6,6 +6,10 @@ using namespace std;
 
 //**************************PRESENTATION-LAYER***********************************//
 
+void difficultyForPlayer();
+void difficultyForComputer();
+void rules();
+void askingUser();
 void MainMenu();
 void login();
 void Register();
