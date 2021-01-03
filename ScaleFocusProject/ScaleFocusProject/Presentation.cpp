@@ -107,7 +107,7 @@ void rules()
 
 	cout << endl;
 	cout << "                                       +--------------------+" << endl;
-	cout << "                                       |        Rules       |" << endl;
+	cout << "                                       |       Rules        |" << endl;
 	cout << "                                       +--------------------+" << endl << endl;
 	cout << "         +----------------------------+                      +----------------------------+" << endl;
 	cout << "         |         Normal mode        |                      |          Hard mode         |" << endl;
@@ -339,14 +339,12 @@ void battleVsPlayerNormal()
 	cout << "                                      +---------------------------+" << endl << endl;
 	cout << endl;
 
-	cout << "                                       Enter the coordinates: ";
-	for (int i = 0; i < 4; i++)
-	{
-		cin >> arr[i];
-	}
-
+	cout << "                                       Enter the coordinates: "; checkInt(arr);
+	
 	inRange(arr);
 	repetitiveNumbers(arr);
+
+	system("cls");
 
 	cout << endl;
 	cout << "                                         Battleship's coordinate " << endl;
@@ -371,14 +369,11 @@ void battleVsPlayerHard()
 	cout << "                                      +---------------------------+" << endl << endl;
 	cout << endl;
 
-	cout << "                                      Enter the coordinates: ";
-	for (int i = 0; i < 4; i++)
-	{
-		cin >> arr[i];
-
-	}
-
+	cout << "                                      Enter the coordinates: "; checkInt(arr);
+	
 	inRange(arr);
+
+	system("cls");
 
 	cout << endl;
 	cout << "                                         Battleship's coordinate " << endl;
@@ -403,10 +398,8 @@ void battleVsComputerNormal()
 	cout << "                                      +---------------------------+" << endl << endl;
 	cout << endl;
 
-	cout << "                                   The computer generate the coordinates! "; generateSecretNumber(arr); 
+	cout << "                               The computer will generate the coordinates! "; generateSecretRepetitiveNumber(arr);
 	
-	repetitiveNumbers(arr);
-
 	// for debugging
 	for (int i = 0; i < 4; i++) 
 	{
@@ -436,7 +429,7 @@ void battleVsComputerHard()
 	cout << "                                      +---------------------------+" << endl << endl;
 	cout << endl;
 
-	cout << "                                   The computer generate the coordinates! "; generateSecretNumber(arr);
+	cout << "                               The computer will generate the coordinates! "; generateSecretRepetitiveNumber(arr);
 
 	// for debugging
 	for (int i = 0; i < 4; i++)
@@ -475,7 +468,7 @@ void askingUser()
 	cout << "                               +------------+                  +-----------+" << endl;
 	cout << "                               |  3. Rules  |                  |  4. Back  |" << endl;;
 	cout << "                               +------------+                  +-----------+" << endl;
-	cout << "                                               Choose an option: "; 
+	cout << "\n                                               Choose an option: "; 
 
 	while (!(cin >> number))
 	{
@@ -562,30 +555,62 @@ void login()
 {
 	string username, password;
 	string result = "invalidAccount";
+	char choice;
+	int choose;
 
 	system("cls");
 
-	while (result == "invalidAccount")
-	{
+	cout << "\n                                             Do you have an account?" << endl;
+	cout << "                                                      Y/N: "; cin >> choice;
 
-		cout << "                                      +------------------------------------+" << endl;
-		cout << "                                      |               Login                |\n";
-		cout << "                                      +------------------------------------+\n" << endl;
-		cout << "                                               Username: "; cin >> username;
-		cout << "                                               Password: "; cin >> password;
-		result = checkAcc(username, password);
+	while (choice != 'Y' && choice != 'N')
+	{
+		cout << "\n                                           Invalid input, try again: "; cin >> choice;
 	}
 
-	if (checkAcc(username, password) == "Please try to login again!")
+	if (choice == 'Y') 
 	{
-		login();
-	}
-	else
-	{
-		askingUser();
-	}
+		system("cls");
+		while (result == "invalidAccount")
+		{
 
-	cout << endl;
+			cout << "                                      +------------------------------------+" << endl;
+			cout << "                                      |               Login                |\n";
+			cout << "                                      +------------------------------------+\n" << endl;
+			cout << "                                               Username: "; cin >> username;
+			cout << "                                               Password: "; cin >> password;
+			result = checkAcc(username, password);
+		}
+
+		if (checkAcc(username, password) == "Please try to login again!")
+		{
+			login();
+		}
+		else
+		{
+			askingUser();
+		}
+
+		cout << endl;
+	}
+	else 
+	{
+		system("cls");
+
+		cout << "\n                                      If you don't have an account, back to register!" << endl;
+		cout << "                                                   Type 1 to back: "; cin >> choose;
+
+		while (choose != 1)
+		{
+			cout << "\n                                           Invalid input, try again: "; cin >> choose;
+		}
+
+		switch (choose)
+		{
+			case 1: MainMenu();
+				break;
+		}
+	}
 }
 
 void Register()
@@ -599,7 +624,7 @@ void Register()
 	cout << "                                       +------------------------------------+" << endl;
 	cout << "                                       |              Register              |" << endl;
 	cout << "                                       +------------------------------------+\n" << endl;
-	cout << "                             !!!The username and password MUST not be over 10 letters!!!" << endl << endl;;
+	cout << "                             !!!The username and password MUST NOT be over 10 letters!!!" << endl << endl;;
 	cout << "                                                 Username: "; cin >> username;
 	cout << "                                                 Password: "; cin >> password;
 	cout << "                                                 Confirm password: "; cin >> c_password;

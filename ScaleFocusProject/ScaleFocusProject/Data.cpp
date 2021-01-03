@@ -44,7 +44,33 @@ string checkAcc(string username, string password)
 	return "invalidAccount";
 }
 
-int generateSecretNumber(int secret_number[])
+int generateSecretWithoutRepetitveNumbers(int secret_number[])
+{
+	srand(time(0));
+	for (int i = 0; i < 4; i++)
+	{
+		secret_number[i] = rand() % 7 + 0;
+	}
+
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = i + 1; j <= 4; j++)
+		{
+			while (secret_number[i] == secret_number[j])
+			{
+				srand(time(0));
+				for (int i = 0; i < 4; i++)
+				{
+					secret_number[i] = rand() % 7 + 0;
+				}
+			}
+		}
+	}
+
+	return *secret_number;
+}
+
+int generateSecretRepetitiveNumber(int secret_number[])
 {
 	srand(time(0));
 	for (int i = 0; i < 4; i++)
@@ -58,8 +84,15 @@ int getUserInput(int guess[])
 {
 	for (int i = 0; i < 4; i++)
 	{
-		cin >> guess[i];
+		while (!(cin >> guess[i]))
+		{
+			cout << "\n                                  Not an integer, please try again: "; cin >> guess[i];
+			cin.clear();
+			cin.ignore(123, '\n');
+		}
 	}
+
+	inRange(guess);
 
 	return *guess;
 }
@@ -106,9 +139,9 @@ int repetitiveNumbers(int arr[])
 {
 	for (int i = 0; i < 4; i++)
 	{
-		for (int j = i + 1; j <= 4; j++)
+		for (int j = i + 1; j < 4; j++)
 		{
-			if (arr[i] == arr[j])
+			while (arr[i] == arr[j])
 			{
 				cout << "\n                                  Try without repetitive numbers: ";
 				for (int i = 0; i < 4; i++)
@@ -132,6 +165,20 @@ int inRange(int arr[])
 			{
 				cin >> arr[i];
 			}
+		}
+	}
+	return *arr;
+}
+
+int checkInt(int arr[])
+{
+	for (int i = 0; i < 4; i++)
+	{
+		while (!(cin >> arr[i]))
+		{
+			cout << "\n                                  Not an integer, please try again: "; cin >> arr[i];
+			cin.clear();
+			cin.ignore(123, '\n');
 		}
 	}
 	return *arr;
