@@ -26,8 +26,11 @@ This is our project for ScaleFocus. This is a game which we created with C++ in 
 <br>
 You can find the documentation, presentation and flowchart here:
 <br>
+<br>
 <a href =>Документация (Documentation)</a>
+<br>
 <a href => Блок-схема (Flowchart) </a>
+<br>
 <a href = > Презентация (Presentation) </a>
 
 
