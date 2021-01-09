@@ -29,8 +29,8 @@ You can find the documentation, presentation and flowchart here:
 <br>
 <a href =>Документация (Documentation)</a>
 <br>
-<a href => Блок-схема (Flowchart) </a>
+<a href = "https://lucid.app/lucidchart/c0c5ed9a-1d7f-4729-ad12-d767241ec677/edit?shared=true&page=0_0#"> Блок-схема (Flowchart) </a>
 <br>
-<a href = "https://lucid.app/lucidchart/c0c5ed9a-1d7f-4729-ad12-d767241ec677/edit?shared=true&page=0_0#"> Презентация (Presentation) </a>
+<a href = > Презентация (Presentation) </a>
 
 
