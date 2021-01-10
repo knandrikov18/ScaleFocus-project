@@ -29,7 +29,7 @@ You can find the documentation, presentation and flowchart here:
 <br>
 <a href =https://codingburgas-my.sharepoint.com/:w:/g/personal/knandrikov18_codingburgas_bg/EUb1u3hwrphHpsa6WNhh1VABZ3k6wwhUp-9CXLoZtPYowA?e=5DmRKD>Документация (Documentation)</a>
 <br>
-<a href = "https://lucid.app/lucidchart/c0c5ed9a-1d7f-4729-ad12-d767241ec677/edit?shared=true&page=0_0#"> Блок-схема (Flowchart) </a>
+<a href = https://codingburgas-my.sharepoint.com/:i:/g/personal/knandrikov18_codingburgas_bg/EeyJ_IRysjJKr3Ha4akMSA4BtzlSu_Va7oL75pAy9B9nMA?e=jBM5Lc> Блок-схема (Flowchart) </a>
 <br>
 <a href = > Презентация (Presentation) </a>
 
