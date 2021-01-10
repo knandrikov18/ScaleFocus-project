@@ -27,7 +27,7 @@ This is our project for ScaleFocus. This is a game which we created with C++ in 
 You can find the documentation, presentation and flowchart here:
 <br>
 <br>
-<a href =https://codingburgas-my.sharepoint.com/:w:/g/personal/knandrikov18_codingburgas_bg/EXbXpf_aU1tHrjp1gy4KR4wBPEWoAt7ZLFDebxVpkBJdRw?e=CeztUb>Документация (Documentation)</a>
+<a href =https://codingburgas-my.sharepoint.com/:w:/g/personal/knandrikov18_codingburgas_bg/EXbXpf_aU1tHrjp1gy4KR4wBPEWoAt7ZLFDebxVpkBJdRw?e=aWCMbi>Документация (Documentation)</a>
 <br>
 <a href = "https://lucid.app/lucidchart/c0c5ed9a-1d7f-4729-ad12-d767241ec677/edit?shared=true&page=0_0#"> Блок-схема (Flowchart) </a>
 <br>
