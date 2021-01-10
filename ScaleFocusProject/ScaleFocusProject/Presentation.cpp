@@ -503,7 +503,6 @@ void askingUser()
 	cout << "                                     |                                    |" << endl;
 	cout << "                                     |         Choose an option:          |" << endl;
 	cout << "                                     +------------------------------------+\n" << endl;
-
 	cout << "                               +----------------------+        +------------------+" << endl;
 	cout << "                               |   1. VS 2-nd player  |        |  2. VS computer  |" << endl;
 	cout << "                               +----------------------+        +------------------+\n" << endl;
@@ -613,7 +612,7 @@ void login()
 {
 	string username, password;
 	string result = "invalidAccount";
-	char choice;
+	char choice{};
 	int choose;
 
 	system("cls");
@@ -623,13 +622,8 @@ void login()
 
 	while (choice != 'Y' && choice != 'N')
 	{
-		cout << "\n                                           Invalid input, try again: "; 
-		while (!(cin >> choice))
-		{
-			cout << "\n                                  Not an integer, please try again: "; cin >> choice;
-			cin.clear();
-			cin.ignore(123, '\n');
-		}
+		cout << "\n                                           Invalid input, try again: "; cin >> choice;
+		break;
 	}
 
 	if (choice == 'Y') 
@@ -637,7 +631,6 @@ void login()
 		system("cls");
 		while (result == "invalidAccount")
 		{
-
 			cout << "                                      +------------------------------------+" << endl;
 			cout << "                                      |               Login                |\n";
 			cout << "                                      +------------------------------------+\n" << endl;
@@ -662,11 +655,23 @@ void login()
 		system("cls");
 
 		cout << "\n                                      If you don't have an account, back to register!" << endl;
-		cout << "                                                   Type 1 to back: "; cin >> choose;
+		cout << "                                                   Type 1 to back: "; 
+		while (!(cin >> choose))
+		{
+			cout << "\n                                  Not an integer, please try again: "; cin >> choose;
+			cin.clear();
+			cin.ignore(123, '\n');
+		}
 
 		while (choose != 1)
 		{
-			cout << "\n                                           Invalid input, try again: "; cin >> choose;
+			cout << "\n                                           Invalid input, try again: "; 
+			while (!(cin >> choose))
+			{
+				cout << "\n                                  Not an integer, please try again: "; cin >> choose;
+				cin.clear();
+				cin.ignore(123, '\n');
+			}
 		}
 
 		switch (choose)
