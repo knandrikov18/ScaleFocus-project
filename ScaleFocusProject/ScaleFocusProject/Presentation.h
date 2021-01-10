@@ -10,12 +10,12 @@ void difficultyForPlayer();
 void difficultyForComputer();
 void rules();
 void customizeView(int arr[]);
-void battleVsPlayerNormal();
+void battleVsPlayerNormal();	
 void battleVsPlayerHard();
 void battleVsComputerNormal();
 void battleVsComputerHard();
 void askingUser();
-void MainMenu();
+void MainMenu();	
 void login();
 void Register();
 

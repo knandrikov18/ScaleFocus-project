@@ -44,7 +44,7 @@ string checkAcc(string username, string password)
 	return "invalidAccount";
 }
 
-int generateSecretWithoutRepetitveNumbers(int secret_number[])
+int generateWithoutRepetitveNumbers(int secret_number[])
 {
 	srand(time(0));
 	for (int i = 0; i < 4; i++)
@@ -54,7 +54,7 @@ int generateSecretWithoutRepetitveNumbers(int secret_number[])
 
 	for (int i = 0; i < 4; i++)
 	{
-		for (int j = i + 1; j <= 4; j++)
+		for (int j = i + 1; j < 4; j++)
 		{
 			while (secret_number[i] == secret_number[j])
 			{
@@ -70,7 +70,7 @@ int generateSecretWithoutRepetitveNumbers(int secret_number[])
 	return *secret_number;
 }
 
-int generateSecretRepetitiveNumber(int secret_number[])
+int generateRepetitiveNumber(int secret_number[])
 {
 	srand(time(0));
 	for (int i = 0; i < 4; i++)

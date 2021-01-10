@@ -47,7 +47,13 @@ void difficultyForPlayer()
 
 	while (choice != 1 && choice != 2 && choice != 3)
 	{
-		cout << "                          Invalid input, please try again: "; cin >> choice;
+		cout << "                          Invalid input, please try again: "; 
+		while (!(cin >> choice))
+		{
+			cout << "\n                                  Not an integer, please try again: "; cin >> choice;
+			cin.clear();
+			cin.ignore(123, '\n');
+		}
 	}
 
 	switch (choice)
@@ -85,7 +91,13 @@ void difficultyForComputer()
 
 	while (choice != 1 && choice != 2 && choice != 3)
 	{
-		cout << "                          Invalid input, please try again: "; cin >> choice;
+		cout << "                          Invalid input, please try again: "; 
+		while (!(cin >> choice))
+		{
+			cout << "\n                                  Not an integer, please try again: "; cin >> choice;
+			cin.clear();
+			cin.ignore(123, '\n');
+		}
 	}
 
 	switch (choice)
@@ -145,7 +157,13 @@ void rules()
 
 	while (choice != 1)
 	{
-		cout << "                          Invalid input, please try again: "; cin >> choice;
+		cout << "\n                                  Invalid input, please try again: "; 
+		while (!(cin >> choice))
+		{
+			cout << "\n                                  Not an integer, please try again: "; cin >> choice;
+			cin.clear();
+			cin.ignore(123, '\n');
+		}
 	}
 
 	switch (choice)
@@ -189,27 +207,22 @@ void customizeView(int arr[])
 			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
 			cout << endl << endl;
 		}
-		if (num1 == 4 && num2 == 0)
+		if (num1 == 0 && num2 == 2)
 		{
 			cout << " Guessed numbers and positions              Player's guesses                    Guessed numbers       " << endl;
 			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
-			cout << "  |   "; points2(); cout << "   "; points2(); cout << "   "; points2(); cout << "   "; points2(); cout << "   |             |  " << guess_number[0] << "  |  " << guess_number[1] << "  |  " << guess_number[2] << "  |  " << guess_number[3] << "  |           |                       | " << endl;
+			cout << "  |                       |             |  " << guess_number[0] << "  |  " << guess_number[1] << "  |  " << guess_number[2] << "  |  " << guess_number[3] << "  |           |   "; points1(); cout << "   "; points1(); cout << "             | " << endl;
 			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
 			cout << endl << endl;
-			cout << "                                        Congratulations, you win! " << endl << endl;
-			cout << "                                        Enter 1 to back:  "; cin >> choice;
-
-			while (choice != 1)
-			{
-				cout << "                                   Invalid input,, try again: "; cin >> choice;
-			}
-
-			switch (choice)
-			{
-				case 1: askingUser();
-					break;
-			}
 		}
+		if (num1 == 0 && num2 == 3)
+		{
+			cout << " Guessed numbers and positions              Player's guesses                    Guessed numbers       " << endl;
+			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
+			cout << "  |                       |             |  " << guess_number[0] << "  |  " << guess_number[1] << "  |  " << guess_number[2] << "  |  " << guess_number[3] << "  |           |   "; points1(); cout << "   "; points1(); cout << "   "; points1(); cout << "        | " << endl;
+			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
+			cout << endl << endl;
+		}		
 		if (num1 == 0 && num2 == 4)
 		{
 			cout << " Guessed numbers and positions              Player's guesses                    Guessed numbers       " << endl;
@@ -218,11 +231,60 @@ void customizeView(int arr[])
 			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
 			cout << endl << endl;
 		}
-		if (num1 == 2 && num2 == 2)
+		if (num1 == 4 && num2 == 0)
 		{
 			cout << " Guessed numbers and positions              Player's guesses                    Guessed numbers       " << endl;
 			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
-			cout << "  |   "; points2(); cout << "   "; points2(); cout << "             |             |  " << guess_number[0] << "  |  " << guess_number[1] << "  |  " << guess_number[2] << "  |  " << guess_number[3] << "  |           |   "; points1(); cout << "   "; points1(); cout << "             | " << endl;
+			cout << "  |   "; points2(); cout << "   "; points2(); cout << "   "; points2(); cout << "   "; points2(); cout << "   |             |  " << guess_number[0] << "  |  " << guess_number[1] << "  |  " << guess_number[2] << "  |  " << guess_number[3] << "  |           |                       | " << endl;
+			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
+			cout << endl << endl;
+			cout << "                                        Congratulations, you win! " << endl << endl;
+			cout << "                                        Enter 1 to back:  "; 
+			while (!(cin >> choice))
+			{
+				cout << "\n                                  Not an integer, please try again: "; cin >> choice;
+				cin.clear();
+				cin.ignore(123, '\n');
+			}
+
+			while (choice != 1)
+			{
+				cout << "                                 Invalid input, try again: ";
+				while (!(cin >> choice))
+				{
+					cout << "\n                                  Not an integer, please try again: "; cin >> choice;
+					cin.clear();
+					cin.ignore(123, '\n');
+				}
+			}
+
+			switch (choice)
+			{
+				case 1: askingUser();
+					break;
+			}
+		}		
+		if (num1 == 3 && num2 == 0)
+		{
+			cout << " Guessed numbers and positions              Player's guesses                    Guessed numbers       " << endl;
+			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
+			cout << "  |   "; points2(); cout << "   "; points2(); cout << "   "; points2(); cout << "        |             |  " << guess_number[0] << "  |  " << guess_number[1] << "  |  " << guess_number[2] << "  |  " << guess_number[3] << "  |           |                       | " << endl;
+			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
+			cout << endl << endl;
+		}		
+		if (num1 == 2 && num2 == 0)
+		{
+			cout << " Guessed numbers and positions              Player's guesses                    Guessed numbers       " << endl;
+			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
+			cout << "  |   "; points2(); cout << "   "; points2();  cout << "             |             |  " << guess_number[0] << "  |  " << guess_number[1] << "  |  " << guess_number[2] << "  |  " << guess_number[3] << "  |           |                       | " << endl;
+			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
+			cout << endl << endl;
+		}		
+		if (num1 == 1 && num2 == 0)
+		{
+			cout << " Guessed numbers and positions              Player's guesses                    Guessed numbers       " << endl;
+			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
+			cout << "  |   "; points2(); cout << "                  |             |  " << guess_number[0] << "  |  " << guess_number[1] << "  |  " << guess_number[2] << "  |  " << guess_number[3] << "  |           |                       | " << endl;
 			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
 			cout << endl << endl;
 		}
@@ -233,12 +295,12 @@ void customizeView(int arr[])
 			cout << "  |   "; points2(); cout << "                  |             |  " << guess_number[0] << "  |  " << guess_number[1] << "  |  " << guess_number[2] << "  |  " << guess_number[3] << "  |           |   "; points1(); cout << "                  | " << endl;
 			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
 			cout << endl << endl;
-		}
-		if (num1 == 3 && num2 == 0)
+		} 	
+		if (num1 == 2 && num2 == 2)
 		{
 			cout << " Guessed numbers and positions              Player's guesses                    Guessed numbers       " << endl;
 			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
-			cout << "  |   "; points2(); cout << "   "; points2(); cout << "   "; points2(); cout << "        |             |  " << guess_number[0] << "  |  " << guess_number[1] << "  |  " << guess_number[2] << "  |  " << guess_number[3] << "  |           |                       | " << endl;
+			cout << "  |   "; points2(); cout << "   "; points2(); cout << "             |             |  " << guess_number[0] << "  |  " << guess_number[1] << "  |  " << guess_number[2] << "  |  " << guess_number[3] << "  |           |   "; points1(); cout << "   "; points1(); cout << "             | " << endl;
 			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
 			cout << endl << endl;
 		}
@@ -258,43 +320,11 @@ void customizeView(int arr[])
 			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
 			cout << endl << endl;
 		}
-		if (num1 == 2 && num2 == 0)
-		{
-			cout << " Guessed numbers and positions              Player's guesses                    Guessed numbers       " << endl;
-			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
-			cout << "  |   "; points2(); cout << "   "; points2();  cout << "             |             |  " << guess_number[0] << "  |  " << guess_number[1] << "  |  " << guess_number[2] << "  |  " << guess_number[3] << "  |           |                       | " << endl;
-			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
-			cout << endl << endl;
-		}
 		if (num1 == 1 && num2 == 2)
 		{
 			cout << " Guessed numbers and positions              Player's guesses                    Guessed numbers       " << endl;
 			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
 			cout << "  |   "; points2(); cout << "                  |             |  " << guess_number[0] << "  |  " << guess_number[1] << "  |  " << guess_number[2] << "  |  " << guess_number[3] << "  |           |   "; points1(); cout << "   "; points1(); cout << "             | " << endl;
-			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
-			cout << endl << endl;
-		}
-		if (num1 == 1 && num2 == 0)
-		{
-			cout << " Guessed numbers and positions              Player's guesses                    Guessed numbers       " << endl;
-			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
-			cout << "  |   "; points2(); cout << "                  |             |  " << guess_number[0] << "  |  " << guess_number[1] << "  |  " << guess_number[2] << "  |  " << guess_number[3] << "  |           |                       | " << endl;
-			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
-			cout << endl << endl;
-		}
-		if (num1 == 0 && num2 == 3)
-		{
-			cout << " Guessed numbers and positions              Player's guesses                    Guessed numbers       " << endl;
-			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
-			cout << "  |                       |             |  " << guess_number[0] << "  |  " << guess_number[1] << "  |  " << guess_number[2] << "  |  " << guess_number[3] << "  |           |   "; points1(); cout << "   "; points1(); cout << "   "; points1(); cout << "        | " << endl;
-			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
-			cout << endl << endl;
-		}
-		if (num1 == 0 && num2 == 2)
-		{
-			cout << " Guessed numbers and positions              Player's guesses                    Guessed numbers       " << endl;
-			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
-			cout << "  |                       |             |  " << guess_number[0] << "  |  " << guess_number[1] << "  |  " << guess_number[2] << "  |  " << guess_number[3] << "  |           |   "; points1(); cout << "   "; points1(); cout << "             | " << endl;
 			cout << "  +-----------------------+             +-----------------------+           +-----------------------+ " << endl;
 			cout << endl << endl;
 		}
@@ -309,11 +339,23 @@ void customizeView(int arr[])
 		if (turns > 13)
 		{
 			cout << "\n                                    You loose, better next time!" << endl << endl;
-			cout << "                                        Enter 1 to back:  "; cin >> choice;
+			cout << "                                        Enter 1 to back:  "; 
+			while (!(cin >> choice))
+			{
+				cout << "\n                                  Not an integer, please try again: "; cin >> choice;
+				cin.clear();
+				cin.ignore(123, '\n');
+			}
 
 			while (choice != 1)
 			{
-				cout << "                                 Invalid input,, try again: "; cin >> choice;
+				cout << "                                 Invalid input, try again: "; 
+				while (!(cin >> choice))
+				{
+					cout << "\n                                  Not an integer, please try again: "; cin >> choice;
+					cin.clear();
+					cin.ignore(123, '\n');
+				}
 			}
 
 			switch (choice)
@@ -398,7 +440,7 @@ void battleVsComputerNormal()
 	cout << "                                      +---------------------------+" << endl << endl;
 	cout << endl;
 
-	cout << "                               The computer will generate the coordinates! "; generateSecretRepetitiveNumber(arr);
+	cout << "                               The computer will generate the coordinates! "; generateWithoutRepetitveNumbers(arr);
 	
 	// for debugging
 	for (int i = 0; i < 4; i++) 
@@ -429,7 +471,7 @@ void battleVsComputerHard()
 	cout << "                                      +---------------------------+" << endl << endl;
 	cout << endl;
 
-	cout << "                               The computer will generate the coordinates! "; generateSecretRepetitiveNumber(arr);
+	cout << "                               The computer will generate the coordinates! "; generateRepetitiveNumber(arr);
 
 	// for debugging
 	for (int i = 0; i < 4; i++)
@@ -479,7 +521,13 @@ void askingUser()
 
 	while (number != 1 && number != 2 && number != 3 && number != 4)
 	{
-		cout << "\n                                 Invalid input, please try again: "; cin >> number;
+		cout << "\n                                 Invalid input, please try again: "; 
+		while (!(cin >> number))
+		{
+			cout << "\n                                  Not an integer, please try again: "; cin >> number;
+			cin.clear();
+			cin.ignore(123, '\n');
+		}
 	}
 
 	switch (number)
@@ -495,6 +543,8 @@ void askingUser()
 		break;
 	case 4:
 		MainMenu();
+		break;
+	default:
 		break;
 	}
 	
@@ -534,7 +584,13 @@ void MainMenu()
 	while (choice != 1 && choice != 2 && choice != 9)
 	{
 		cout << endl;
-		cout << "\n                              Invalid option, please try again: "; cin >> choice;
+		cout << "\n                              Invalid option, please try again: "; 
+		while (!(cin >> choice))
+		{
+			cout << "\n                                  Not an integer, please try again: "; cin >> choice;
+			cin.clear();
+			cin.ignore(123, '\n');
+		}
 		cout << endl;
 	}
 
@@ -547,6 +603,8 @@ void MainMenu()
 		Register();
 		break;
 	case 9:
+		break;
+	default:
 		break;
 	}
 }
@@ -565,7 +623,13 @@ void login()
 
 	while (choice != 'Y' && choice != 'N')
 	{
-		cout << "\n                                           Invalid input, try again: "; cin >> choice;
+		cout << "\n                                           Invalid input, try again: "; 
+		while (!(cin >> choice))
+		{
+			cout << "\n                                  Not an integer, please try again: "; cin >> choice;
+			cin.clear();
+			cin.ignore(123, '\n');
+		}
 	}
 
 	if (choice == 'Y') 
