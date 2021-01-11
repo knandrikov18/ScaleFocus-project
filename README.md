@@ -31,6 +31,6 @@ You can find the documentation, presentation and flowchart here:
 <br>
 <a href = https://codingburgas-my.sharepoint.com/:i:/g/personal/knandrikov18_codingburgas_bg/EeyJ_IRysjJKr3Ha4akMSA4BtzlSu_Va7oL75pAy9B9nMA?e=jBM5Lc> Блок-схема (Flowchart) </a>
 <br>
-<a href = > Презентация (Presentation) </a>
+<a href = https://codingburgas-my.sharepoint.com/:p:/g/personal/knandrikov18_codingburgas_bg/EUAMv2mH9qVHjqg5fdDqLXEBm1agXmSzryVTgIjz4a8-oQ?e=c1SYwc> Презентация (Presentation) </a>
 
 
