@@ -9,21 +9,23 @@
 
 using namespace std;
 
-void points1()
+//**************************PRESENTATION-LAYER***********************************//
+
+void points1() // points for numbers and positions
 {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12);
 	printf(R"(**)");
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
 }
 
-void points2()
+void points2() // points only for numbers
 {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 10);
 	printf(R"(**)");
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
 }
 
-void difficultyForPlayer()
+void difficultyForPlayer() // menu for vs 2-nd player difficulty
 {
 	int choice;
 
@@ -67,7 +69,7 @@ void difficultyForPlayer()
 	}
 }
 
-void difficultyForComputer()
+void difficultyForComputer() // menu for vs computer difficulty
 {
 	int choice;
 
@@ -111,7 +113,7 @@ void difficultyForComputer()
 	}
 }
 
-void rules()
+void rules() // rules of the game
 {
 	int choice;
 
@@ -173,7 +175,7 @@ void rules()
 	}
 }
 
-void customizeView(int arr[])
+void customizeView(int arr[]) // the main vizualization of the game
 {
 	int turns = 1, choice;
 
@@ -191,6 +193,7 @@ void customizeView(int arr[])
 		int num1 = guessedNumbersAndPositions(arr, guess_number, secret_digit_used, guess_digit_used);
 		int num2 = guessedNumbers(arr, guess_number, secret_digit_used, guess_digit_used);
 
+		// checks for every situation
 		if (num1 == 0 && num2 == 0)
 		{
 			cout << " Guessed numbers and positions              Player's guesses                    Guessed numbers       " << endl;
@@ -338,8 +341,15 @@ void customizeView(int arr[])
 		}
 		if (turns > 13)
 		{
-			cout << "\n                                    You loose, better next time!" << endl << endl;
-			cout << "                                        Enter 1 to back:  "; 
+			cout << "\n                                    You loose, better next time!"<< endl << endl;
+			cout << "                                    The correct answer is: "; 
+
+			for (int i = 0; i < 4; i++)
+			{
+				cout << arr[i] << " ";
+			}
+			
+			cout << "\n\n                                        Enter 1 to back:  "; 
 			while (!(cin >> choice))
 			{
 				cout << "\n                                  Not an integer, please try again: "; cin >> choice;
@@ -367,7 +377,7 @@ void customizeView(int arr[])
 	}
 }
 
-void battleVsPlayerNormal()
+void battleVsPlayerNormal() // menu for vs 2-nd player in normal difficulty
 {
 	int arr[4];
 
@@ -383,8 +393,8 @@ void battleVsPlayerNormal()
 
 	cout << "                                       Enter the coordinates: "; checkInt(arr);
 	
-	inRange(arr);
-	repetitiveNumbers(arr);
+	inRange(arr); // check for numbers in range between 0 and 7
+	repetitiveNumbers(arr); // check for repetitive numbers
 
 	system("cls");
 
@@ -397,7 +407,7 @@ void battleVsPlayerNormal()
 	customizeView(arr);
 }
 
-void battleVsPlayerHard()
+void battleVsPlayerHard() // menu for vs 2-nd player in hard difficulty
 {
 	int arr[4];
 
@@ -413,7 +423,7 @@ void battleVsPlayerHard()
 
 	cout << "                                      Enter the coordinates: "; checkInt(arr);
 	
-	inRange(arr);
+	inRange(arr); // check for numbers in range between 0 and 7
 
 	system("cls");
 
@@ -426,7 +436,7 @@ void battleVsPlayerHard()
 	customizeView(arr);
 }
 
-void battleVsComputerNormal()
+void battleVsComputerNormal() // menu for vs computer in normal difficulty
 {
 	int arr[4];
 
@@ -457,7 +467,7 @@ void battleVsComputerNormal()
 	customizeView(arr);
 }
 
-void battleVsComputerHard()
+void battleVsComputerHard() // menu for vs computer in hard difficulty
 {
 	int arr[4];
 
@@ -490,7 +500,7 @@ void battleVsComputerHard()
 	customizeView(arr);
 }
 
-void askingUser()
+void askingUser() // the mode menu of the game
 {
 	int number;
 
@@ -511,14 +521,14 @@ void askingUser()
 	cout << "                               +------------+                  +-----------+" << endl;
 	cout << "\n                                               Choose an option: "; 
 
-	while (!(cin >> number))
+	while (!(cin >> number)) // check for integer
 	{
 		cout << "\n                                  Not an integer, please try again: "; cin >> number;
 		cin.clear();
 		cin.ignore(123, '\n');
 	}
 
-	while (number != 1 && number != 2 && number != 3 && number != 4)
+	while (number != 1 && number != 2 && number != 3 && number != 4) // check for different options
 	{
 		cout << "\n                                 Invalid input, please try again: "; 
 		while (!(cin >> number))
@@ -549,7 +559,7 @@ void askingUser()
 	
 }
 
-void MainMenu()
+void MainMenu() // the main menu of the game
 {
 	int choice{};
 
@@ -573,14 +583,14 @@ void MainMenu()
 	cout << "      * * * * * * * * * * * *           +---------------------------------+            * * * * * * * * * * * *    " << endl << endl;
 
 	cout << "                                               Choose an option: ";
-	while (!(cin >> choice))
+	while (!(cin >> choice)) // check for interger
 	{
 		cout << "\n                                  Not an integer, please try again: "; cin >> choice;
 		cin.clear();
 		cin.ignore(123, '\n');
 	}
 
-	while (choice != 1 && choice != 2 && choice != 9)
+	while (choice != 1 && choice != 2 && choice != 9) // check for different options
 	{
 		cout << endl;
 		cout << "\n                              Invalid option, please try again: "; 
@@ -608,7 +618,7 @@ void MainMenu()
 	}
 }
 
-void login()
+void login() // login system
 {
 	string username, password;
 	string result = "invalidAccount";
@@ -639,7 +649,7 @@ void login()
 			result = checkAcc(username, password);
 		}
 
-		if (checkAcc(username, password) == "Please try to login again!")
+		if (checkAcc(username, password) == "Please try to login again!") // check the account
 		{
 			login();
 		}
@@ -682,7 +692,7 @@ void login()
 	}
 }
 
-void Register()
+void Register() // register system
 {
 	string username, password, c_password;
 	ofstream myfile("acc.txt", ios::app | ios::ate);
@@ -699,7 +709,7 @@ void Register()
 	cout << "                                                 Confirm password: "; cin >> c_password;
 	cout << endl;
 
-	while (username.length() > 10 || password.length() > 10)
+	while (username.length() > 10 || password.length() > 10) // check the length of the username and the password
 	{
 		myfile.clear();
 		cout << "\n                        The username or password is over the limit, please try again!!!\n" << endl;
@@ -714,7 +724,9 @@ void Register()
 	}
 
 	cout << endl;
-	myfile << username << "," << password << ",\n";
+	myfile << username << "," << password << ",\n"; // write in file
 	myfile.close();
 	askingUser();
 }
+
+//**************************PRESENTATION-LAYER***********************************//

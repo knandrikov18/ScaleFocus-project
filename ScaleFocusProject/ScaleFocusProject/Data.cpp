@@ -9,7 +9,9 @@
 
 using namespace std;
 
-string checkAcc(string username, string password)
+//*******************************DATA-LAYER***************************************//
+
+string checkAcc(string username, string password) // check if the username and the password are the same as the user's input
 {
 	ifstream myfile("acc.txt");
 	string line[20];
@@ -44,7 +46,7 @@ string checkAcc(string username, string password)
 	return "invalidAccount";
 }
 
-int generateWithoutRepetitveNumbers(int secret_number[])
+int generateWithoutRepetitveNumbers(int secret_number[]) // generate 4 numbers between 0 and 7
 {
 	srand(time(0));
 	for (int i = 0; i < 4; i++)
@@ -52,7 +54,7 @@ int generateWithoutRepetitveNumbers(int secret_number[])
 		secret_number[i] = rand() % 7 + 0;
 	}
 
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < 4; i++) // check for repetitive numbers
 	{
 		for (int j = i + 1; j < 4; j++)
 		{
@@ -70,7 +72,7 @@ int generateWithoutRepetitveNumbers(int secret_number[])
 	return *secret_number;
 }
 
-int generateRepetitiveNumber(int secret_number[])
+int generateRepetitiveNumber(int secret_number[]) // generate 4 numbers between 0 and 7
 {
 	srand(time(0));
 	for (int i = 0; i < 4; i++)
@@ -80,11 +82,11 @@ int generateRepetitiveNumber(int secret_number[])
 	return *secret_number;
 }
 
-int getUserInput(int guess[])
+int getUserInput(int guess[]) // get the user's input
 {
 	for (int i = 0; i < 4; i++)
 	{
-		while (!(cin >> guess[i]))
+		while (!(cin >> guess[i])) // check for integer numbers
 		{
 			cout << "\n                                  Not an integer, please try again: "; cin >> guess[i];
 			cin.clear();
@@ -92,12 +94,12 @@ int getUserInput(int guess[])
 		}
 	}
 
-	inRange(guess);
+	inRange(guess); // check for input numbers, if they are in range between 0 and 7
 
 	return *guess;
 }
 
-int guessedNumbersAndPositions(int* secret_num, int* guess_num, bool secret_digit_used[], bool guess_digit_used[])
+int guessedNumbersAndPositions(int* secret_num, int* guess_num, bool secret_digit_used[], bool guess_digit_used[]) // count numbers and position
 {
 	int count = 0;
 
@@ -113,7 +115,7 @@ int guessedNumbersAndPositions(int* secret_num, int* guess_num, bool secret_digi
 	return count;
 }
 
-int guessedNumbers(int* secret_num, int* guess_num, bool secret_digit_used[], bool guess_digit_used[])
+int guessedNumbers(int* secret_num, int* guess_num, bool secret_digit_used[], bool guess_digit_used[]) // count only the numbers without position
 {
 	int count = 0;
 
@@ -135,7 +137,7 @@ int guessedNumbers(int* secret_num, int* guess_num, bool secret_digit_used[], bo
 	return count;
 }
 
-int repetitiveNumbers(int arr[])
+int repetitiveNumbers(int arr[]) // check for repetitive nunbers
 {
 	for (int i = 0; i < 4; i++)
 	{
@@ -154,7 +156,7 @@ int repetitiveNumbers(int arr[])
 	return *arr;
 }
 
-int inRange(int arr[])
+int inRange(int arr[]) // check for numbers in range between 0 and 7
 {
 	for (int i = 0; i < 4; i++)
 	{
@@ -170,7 +172,7 @@ int inRange(int arr[])
 	return *arr;
 }
 
-int checkInt(int arr[])
+int checkInt(int arr[]) // check for integer numbers
 {
 	for (int i = 0; i < 4; i++)
 	{
@@ -183,3 +185,5 @@ int checkInt(int arr[])
 	}
 	return *arr;
 }
+
+//*******************************DATA-LAYER***************************************//
